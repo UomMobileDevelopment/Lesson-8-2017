@@ -1,5 +1,3 @@
-# Lesson06-sunshine
+# Lesson 08-sunshine - version 2017
 
-- 25/11/16
-
-- 10/11/17
+- 1/12/17
