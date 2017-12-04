@@ -44,6 +44,7 @@ public class DetailActivity extends ActionBarActivity {
         }
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -51,26 +52,23 @@ public class DetailActivity extends ActionBarActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
     public static class DetailFragment extends Fragment {
 
         private static final String LOG_TAG = DetailFragment.class.getSimpleName();
@@ -113,13 +111,11 @@ public class DetailActivity extends ActionBarActivity {
 
         @Override
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            //Inflate the menu, this adds items to the action bar if it is not present
+
             inflater.inflate(R.menu.detailfragment, menu);
 
             MenuItem menuItem = menu.findItem(R.id.action_share);
-
             ShareActionProvider shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-
             if(shareActionProvider != null){
                 shareActionProvider.setShareIntent(createShareForacastIntent());
                 Log.e(LOG_TAG, "intent set to share action provider ");
